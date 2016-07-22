@@ -2,10 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser')
 var app = express();
 
-var port = 3333;
-if (process.env.NODE_ENV === 'production') {
- port = 8080;
-}
+var port = process.env.PORT || 5000;
 
 var latLong = {};
 
