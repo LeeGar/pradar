@@ -4,7 +4,7 @@ var app = express();
 
 var port = 3333;
 if (process.env.NODE_ENV === 'production') {
- port = 80;
+ port = 8000;
 }
 
 var latLong = {};
