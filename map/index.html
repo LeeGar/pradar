@@ -1,0 +1,38 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+          html, 
+          body {
+              height: 100%;
+          }
+          </style>
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <script type="text/javascript">
+          if ("geolocation" in navigator) {
+            setInterval(function() {
+              navigator.geolocation.getCurrentPosition(function(position) {
+
+                var headers = new Headers();
+                headers.append('Content-Type', 'application/json');
+                fetch('/update', {method: 'POST', headers: headers, body: JSON.stringify({lat: position.coords.latitude, long: position.coords.longitude})});
+              });
+            }, 5000);
+            
+          } else {
+            /* geolocation IS NOT available */
+          }
+        </script>
+    </head>
+    <body style="height: 100%;margin:0px;padding:0px;overflow:hidden">
+        
+        <iframe src="https://skiplagged.com/pokemon" frameborder="0" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%"></iframe>
+
+    </body>
+</html>
